@@ -930,6 +930,77 @@
             text-align: center;
             padding: var(--spacing-16);
         }
+        
+        /* Security section styles */
+        .security-card {
+            background: var(--white);
+            border-left: 4px solid #e53e3e;
+            padding: var(--spacing-8);
+            border-radius: var(--border-radius-lg);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .badge-danger {
+            background: linear-gradient(135deg, #dc2626, #7f1d1d);
+            color: var(--white);
+        }
+        
+        .gradient-text-danger {
+            background: linear-gradient(135deg, #ef4444, #b91c1c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            display: inline-block;
+        }
+        
+        .security-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 var(--spacing-6);
+        }
+        
+        .security-list li {
+            display: flex;
+            flex-direction: column;
+            padding: var(--spacing-4);
+            margin-bottom: var(--spacing-3);
+            background: rgba(239, 68, 68, 0.05);
+            border-radius: var(--border-radius-md);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            transition: var(--transition-normal);
+        }
+        
+        .security-list li:hover {
+            background: rgba(239, 68, 68, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.1);
+        }
+        
+        .hacker-name {
+            font-weight: 700;
+            color: #dc2626;
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-2);
+        }
+        
+        .hacker-details {
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+        
+        .security-note {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-4);
+            margin-top: var(--spacing-6);
+        }
+        
+        .security-note p {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
 
         .footer {
             background: var(--dark-200);
@@ -1215,6 +1286,7 @@
                 <a href="#home" class="nav-link active">Home</a>
                 <a href="#about" class="nav-link">About</a>
                 <a href="#features" class="nav-link">Features</a>
+                <a href="#security" class="nav-link">Security</a>
                 <a href="#waitlist" class="nav-link">Waitlist</a>
             </div>
         </div>
@@ -1242,24 +1314,19 @@
                 
                 <div class="fade-in delay-1">
                     <div class="glass-panel p-8 float-animation">
-                        <svg width="100%" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M50 220L120 150L180 200L250 120L350 180" stroke="url(#chart-gradient)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                            <circle cx="50" cy="220" r="6" fill="#0056FF"/>
-                            <circle cx="120" cy="150" r="6" fill="#0056FF"/>
-                            <circle cx="180" cy="200" r="6" fill="#0056FF"/>
-                            <circle cx="250" cy="120" r="6" fill="#0056FF"/>
-                            <circle cx="350" cy="180" r="6" fill="#0056FF"/>
-                            <rect x="50" y="50" width="300" height="200" stroke="rgba(255,255,255,0.1)" stroke-width="1" stroke-dasharray="4 4"/>
-                            <line x1="50" y1="50" x2="50" y2="250" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-                            <line x1="50" y1="250" x2="350" y2="250" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-                            <defs>
-                                <linearGradient id="chart-gradient" x1="50" y1="220" x2="350" y2="180" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#0056FF"/>
-                                    <stop offset="0.5" stop-color="#FF006E"/>
-                                    <stop offset="1" stop-color="#00E4FF"/>
-                                </linearGradient>
-                            </defs>
-                        </svg>
+                        <div class="relative w-full h-300 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg overflow-hidden flex items-center justify-center">
+                            <div class="text-center p-6">
+                                <div class="text-4xl font-bold text-amber-500 mb-2">FIRE-PIC.JPEG</div>
+                                <div class="text-xl text-gray-300">Placeholder Image</div>
+                                
+                                <!-- Fire effect -->
+                                <div class="absolute inset-0 pointer-events-none flex items-center justify-center">
+                                    <div class="w-40 h-40 bg-amber-500 rounded-full opacity-20 animate-pulse"></div>
+                                    <div class="absolute w-32 h-32 bg-orange-500 rounded-full opacity-20 animate-pulse delay-300"></div>
+                                    <div class="absolute w-24 h-24 bg-red-500 rounded-full opacity-20 animate-pulse delay-500"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1326,7 +1393,7 @@
                         </svg>
                     </div>
                     <h4>Realistic Market Behavior</h4>
-                    <p>Experience markets that respond using AI.</p>
+                    <p>Experience markets that respond to global events, news, and economic indicators just like real-world markets.</p>
                 </div>
                 
                 <div class="card feature-card fade-in delay-1">
@@ -1398,6 +1465,40 @@
         </div>
     </section>
 
+    <!-- Security Section - Known Hackers -->
+    <section class="section bg-gray-50" id="security">
+        <div class="container">
+            <div class="text-center mb-16 fade-in">
+                <div class="badge badge-danger mx-auto mb-4">Security Alert</div>
+                <h2>Security <span class="gradient-text-danger">Notice</span></h2>
+                <p class="text-lg mx-auto" style="max-width: 700px;">For your safety, please be aware of these known security threats and exercise caution.</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto fade-in delay-1">
+                <div class="card security-card">
+                    <h3 class="text-xl font-bold mb-4 text-red-600">People to Avoid (Known Hackers)</h3>
+                    <p class="mb-6">
+                        The following individuals have been identified as potential security risks. Exercise caution when interacting with them online:
+                    </p>
+                    <ul class="security-list">
+                        <li>
+                            <span class="hacker-name">Huski</span>
+                            <span class="hacker-details">Known for phishing attempts and social engineering</span>
+                        </li>
+                        <li>
+                            <span class="hacker-name">BlinD</span>
+                            <span class="hacker-details">Associated with malware distribution and system intrusions</span>
+                        </li>
+                        <!-- Additional entries can be added here -->
+                    </ul>
+                    <div class="security-note">
+                        <p>This list is regularly updated. If you encounter suspicious activity from these or other individuals, please report it immediately.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Section -->
     <footer class="footer">
         <div class="container">
@@ -1419,7 +1520,7 @@
                             <span>Realism Dynamics</span>
                         </a>
                     </div>
-                    <p>Empowering the next generation of gamers through realistic simulation and education.</p>
+                    <p>Empowering the next generation of investors through immersive simulation and education.</p>
                     <div class="social-links mt-8">
                         <a href="#" class="social-link">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1476,7 +1577,6 @@
             
             <div class="copyright">
                 <p>&copy; 2025 Realism Dynamics. All rights reserved.</p>
-              <p>&copy; Made by OddsJuix</p>
             </div>
         </div>
     </footer>
@@ -1586,7 +1686,7 @@
         function checkIfInView() {
             animatedElements.forEach(element => {
                 const elementTop = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;  // Made by OddsJuix
+                const windowHeight = window.innerHeight;
                 
                 if (elementTop < windowHeight - 100) {
                     element.classList.add('active');
